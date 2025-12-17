@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shake del carrito */
+.cart-shake {
+  animation: cartShake 0.4s ease;
+}
+@keyframes cartShake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+/* Scroll bonito para modo oscuro */
+.custom-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Quitar scroll feo */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Glow suave para elementos importantes */
+.glow {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.p{
+  size: 33px;
+}
+

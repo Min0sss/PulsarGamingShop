@@ -30,7 +30,7 @@ export default function ProductDetail({ product, onBack, addToCart }) {
           className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-cyan-400 transition"
         >
           <span className="text-lg">←</span>
-          Volver a productos
+          Back to products
         </button>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] mt-2">
@@ -123,7 +123,7 @@ export default function ProductDetail({ product, onBack, addToCart }) {
             {}
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-slate-400">Precio</p>
+                <p className="text-xs text-slate-400">Price</p>
                 <p className="text-2xl font-semibold text-cyan-400">
                   S/. {product.price.toFixed(2)}
                 </p>
@@ -144,7 +144,7 @@ export default function ProductDetail({ product, onBack, addToCart }) {
 
                 {product.marca && (
                   <p className="text-[11px] text-slate-400 mt-1">
-                    Marca:{" "}
+                    Brand:{" "}
                     <span className="text-slate-200">{product.marca}</span>
                   </p>
                 )}
@@ -159,7 +159,7 @@ export default function ProductDetail({ product, onBack, addToCart }) {
             {}
             {Array.isArray(product.specs) && (
               <div className="pt-2">
-                <p className="text-xs font-semibold mb-2">Especificaciones</p>
+                <p className="text-xs font-semibold mb-2">Specs</p>
                 <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
                   {product.specs.map((s, idx) => (
                     <li key={idx}>{s}</li>
@@ -174,21 +174,20 @@ export default function ProductDetail({ product, onBack, addToCart }) {
                 onClick={() => addToCart(product)}
                 className="flex-1 rounded-xl bg-cyan-500 text-slate-950 text-sm font-semibold px-4 py-2.5 shadow-[0_0_35px_rgba(34,211,238,0.55)] hover:bg-cyan-400 transition"
               >
-                🛒 Agregar al carrito
+                🛒 Add to cart
               </button>
 
               <button
                 onClick={onBack}
                 className="flex-1 rounded-xl border border-slate-700 bg-slate-900/60 text-slate-200 text-sm hover:border-cyan-400 hover:text-cyan-300 transition"
               >
-                ← Seguir viendo productos
+                ← See more products
               </button>
             </div>
 
             <p className="text-[16px] text-slate-500 pt-1">
-            Tarjeta de crédito o débito: recargo del 5%.
-            Transferencia y efectivo: sin recargo.
-            Cuotas sin intereses disponibles
+            Credit or debit card: 5% fee. Bank transfer and cash: no extra charge. 
+            Interest-free installments available.
             </p>
           </div>
         </div>

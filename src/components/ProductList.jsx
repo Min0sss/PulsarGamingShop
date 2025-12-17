@@ -66,7 +66,7 @@ export default function ProductList({ products, onSelectProduct, addToCart }) {
               hover:shadow-cyan-500/30
             "
           >
-            Agregar al carrito
+            Add to cart
           </button>
         </div>
       ))}

@@ -35,11 +35,11 @@ export default function CheckoutPage({ cart = [], clearCart }) {
     const newErrors = {};
 
     req.forEach((f) => {
-      if (!form[f].trim()) newErrors[f] = "Este campo es obligatorio";
+      if (!form[f].trim()) newErrors[f] = "This field is required";
     });
 
     if (form.email && !/^\S+@\S+\.\S+$/.test(form.email))
-      newErrors.email = "Correo no válido";
+      newErrors.email = "Invalid email";
 
     return newErrors;
   };
@@ -48,7 +48,7 @@ export default function CheckoutPage({ cart = [], clearCart }) {
     e.preventDefault();
 
     if (!cart.length) {
-      setGlobalError("Tu carrito está vacío, agrega productos antes de pagar.");
+      setGlobalError("Your cart is empty, please add products before checking out.");
       return;
     }
 
@@ -78,7 +78,7 @@ export default function CheckoutPage({ cart = [], clearCart }) {
             </p>
             <h1 className="text-2xl md:text-3xl font-semibold">Checkout</h1>
             <p className="text-sm text-slate-400 mt-1">
-              Revisa tu información y confirma tu pedido.
+              Review your information and confirm your order.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export default function CheckoutPage({ cart = [], clearCart }) {
             className="text-xs md:text-sm border border-slate-700/70 px-3 py-2 rounded-xl 
             hover:border-teal-400/80 hover:text-teal-300 bg-slate-900/40 backdrop-blur-md transition"
           >
-            ⬅ Seguir comprando
+            ⬅ Continue shopping
           </Link>
         </div>
 
@@ -100,7 +100,7 @@ export default function CheckoutPage({ cart = [], clearCart }) {
 
         {success && (
           <div className="rounded-xl border border-teal-500/60 bg-teal-500/10 px-4 py-3 text-sm text-teal-200">
-            ✅ ¡Pago realizado con éxito! Tu pedido ha sido registrado.
+            ✅ Payment successful! Your order has been registered.
           </div>
         )}
 
@@ -114,20 +114,20 @@ export default function CheckoutPage({ cart = [], clearCart }) {
             rounded-2xl p-5 md:p-6 shadow-[0_18px_60px_rgba(0,0,0,0.65)] space-y-5"
           >
             <div className="flex items-center justify-between">
-              <h2 className="text-lg md:text-xl font-semibold">Datos de envío</h2>
+              <h2 className="text-lg md:text-xl font-semibold">Shipping information</h2>
               <span className="text-[10px] text-slate-400">
-                * Campos obligatorios
+                * Required fields
               </span>
             </div>
 
             {}
             {[
-              { label: "Nombre completo", name: "name", placeholder: "Ej: Guillermo Contreras" },
-              { label: "Correo electrónico", name: "email", placeholder: "tucorreo@ejemplo.com" },
-              { label: "Teléfono", name: "phone", placeholder: "+51 999 999 999" },
-              { label: "Dirección", name: "address", placeholder: "Calle, número, referencia" },
-              { label: "Ciudad", name: "city", placeholder: "Ej: Lima" },
-              { label: "País", name: "country", placeholder: "Ej: Perú" },
+              { label: "Full name", name: "name", placeholder: "Ej: Guillermo Contreras" },
+              { label: "Email", name: "email", placeholder: "youremail@example.com" },
+              { label: "Phone", name: "phone", placeholder: "+51 999 999 999" },
+              { label: "Adress", name: "address", placeholder: "Street, number, reference" },
+              { label: "City", name: "city", placeholder: "Ej: Lima" },
+              { label: "country", name: "country", placeholder: "Ej: Perú" },
             ].map(({ label, name, placeholder }) => (
               <div key={name} className="space-y-1">
                 <label className="text-xs text-slate-300">
@@ -153,13 +153,13 @@ export default function CheckoutPage({ cart = [], clearCart }) {
 
             {}
             <div className="space-y-1">
-              <label className="text-xs text-slate-300">Notas adicionales</label>
+              <label className="text-xs text-slate-300">Additional notes</label>
               <textarea
                 name="notes"
                 value={form.notes}
                 onChange={handleChange}
                 rows={3}
-                placeholder="Referencias, horarios…"
+                placeholder="References, schedules…"
                 className="w-full rounded-xl bg-slate-900/80 border border-slate-700/70 
                 px-3 py-2.5 text-sm outline-none resize-none 
                 focus:ring-2 focus:ring-teal-500/80"
@@ -168,13 +168,13 @@ export default function CheckoutPage({ cart = [], clearCart }) {
 
             {}
             <div className="space-y-3 pt-2">
-              <h3 className="text-sm font-semibold text-slate-100">Método de pago</h3>
+              <h3 className="text-sm font-semibold text-slate-100">Payment method</h3>
 
               <div className="grid md:grid-cols-3 gap-3 text-xs">
                 {[
-                  { id: "card", text: "💳 Tarjeta de crédito", sub: "Visa, Mastercard" },
-                  { id: "transfer", text: "🏦 Transferencia", sub: "Depósito bancario" },
-                  { id: "cash", text: "📦 Pago contra entrega", sub: "Efectivo al recibir" },
+                  { id: "card", text: "💳 Credit card", sub: "Visa, Mastercard" },
+                  { id: "transfer", text: "🏦 Transfer", sub: "Bank deposit" },
+                  { id: "cash", text: "📦 Payment on delivery", sub: "Cash upon receipt" },
                 ].map((m) => (
                   <button
                     type="button"
@@ -207,13 +207,13 @@ export default function CheckoutPage({ cart = [], clearCart }) {
                 {isPaying ? (
                   <>
                     <span className="h-4 w-4 border-2 border-slate-950/20 border-t-slate-950 rounded-full animate-spin" />
-                    Procesando pago...
+                    Processing payment...
                   </>
                 ) : success ? (
-                  "Pago completado"
+                  "Payment Completed"
                 ) : (
                   <>
-                    Confirmar pedido{" "}
+                    Confirm order{" "}
                     <span className="text-xs opacity-80">(S/. {total.toFixed(2)})</span>
                   </>
                 )}
@@ -225,14 +225,14 @@ export default function CheckoutPage({ cart = [], clearCart }) {
           <aside className="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 md:p-6 
           shadow-[0_18px_60px_rgba(0,0,0,0.75)] space-y-4 backdrop-blur-xl">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Resumen del pedido</h2>
-              <span className="text-[11px] text-slate-400">{cart.length} producto(s)</span>
+              <h2 className="text-lg font-semibold">Order Summary</h2>
+              <span className="text-[11px] text-slate-400">{cart.length} product(s)</span>
             </div>
 
             <div className="space-y-3 max-h-[260px] overflow-y-auto pr-1 custom-scroll">
               {cart.length === 0 ? (
                 <p className="text-sm text-slate-400">
-                  No hay productos en el carrito.
+                  There are no products in the cart.
                 </p>
               ) : (
                 cart.map((item) => (
@@ -246,7 +246,7 @@ export default function CheckoutPage({ cart = [], clearCart }) {
                         {item.name}
                       </p>
                       <p className="text-[11px] text-slate-400">
-                        Cant: {item.qty} × S/. {item.price.toFixed(2)}
+                        Amount: {item.qty} × S/. {item.price.toFixed(2)}
                       </p>
                     </div>
                     <p className="text-xs font-semibold text-teal-300">
@@ -264,12 +264,12 @@ export default function CheckoutPage({ cart = [], clearCart }) {
               </div>
 
               <div className="flex justify-between text-xs text-slate-300">
-                <span>Envío</span>
-                <span className="text-teal-300">GRATIS</span>
+                <span>Shipment</span>
+                <span className="text-teal-300">Free</span>
               </div>
 
               <div className="flex justify-between text-sm font-semibold text-slate-100 pt-1">
-                <span>Total a pagar</span>
+                <span>Total to pay</span>
                 <span className="text-teal-300">S/. {total.toFixed(2)}</span>
               </div>
             </div>

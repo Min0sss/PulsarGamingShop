@@ -72,7 +72,7 @@ export default function ProductCard({ product, onAddToCart, onViewDetail }) {
             text-slate-950 font-semibold text-xs transition-all shadow-md
           "
         >
-          Agregar al carrito
+          Add to Cart
         </motion.button>
       </div>
     </motion.article>

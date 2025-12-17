@@ -1,4 +1,3 @@
-// src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
@@ -54,7 +53,7 @@ function App() {
       return [...prev, { ...product, qty: 1 }];
     });
 
-    showToastMessage(`"${product.name}" agregado al carrito`);
+    showToastMessage(`"${product.name}" Added to cart`);
 
     const btn = document.getElementById("cart-btn");
     if (btn) {

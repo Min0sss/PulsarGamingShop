@@ -18,20 +18,20 @@ export default function Navbar({
     return () => clearTimeout(timeout);
   }, [cartCount]);
   const categoryMap = {
-    Todos: "Todos",
-    "Tarjeta Grafica": "tarjeta-grafica",
+    All : "Todos",
+    "Graphics cards": "tarjeta-grafica",
     Motherboard: "motherboard",
-    Procesador: "procesador",
-    Almacenamiento: "almacenamiento",
+    Processor: "procesador",
+    Storage: "almacenamiento",
     Case: "case",
-    Fuente: "fuente",
+    "Power supply": "fuente",
     Ram: "ram",
-    Refrigeracion: "refrigeracion",
-    Monitor: "monitor",
-    Audifonos: "audifonos",
-    Teclado: "teclado",
+    Cooling: "refrigeracion",
+    Monitors: "monitor",
+    Headphones: "audifonos",
+    Keyboards: "teclado",
     Mouse: "mouse",
-    Microfono: "microfono",
+    Microphones: "microfono",
   };
 
   const scrollRef = useRef(null);
@@ -75,7 +75,7 @@ export default function Navbar({
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar productos..."
+            placeholder="Search products..."
             className="
               w-full sm:w-80 
               px-4 py-2 rounded-xl bg-slate-800 text-slate-300 
@@ -99,7 +99,7 @@ export default function Navbar({
             ${isShaking ? "animate-bounce" : ""}
           `}
         >
-          Carrito
+          Cart
           {cartCount > 0 && (
             <span className="bg-red-500 text-xs px-2 py-0.5 rounded-full shadow-md animate-pulse">
               {cartCount}

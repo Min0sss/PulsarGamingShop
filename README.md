@@ -7,8 +7,8 @@ This project showcases clean front-end architecture, modern UI/UX design, and re
 ---
 
 ## Live Demo
-*(Deployment link will be added here)*
 
+https://pulsar-gaming-shop.vercel.app/
 ---
 
 ## Features
@@ -41,7 +41,7 @@ This project showcases clean front-end architecture, modern UI/UX design, and re
 
 ## Project Structure
 
-
+```bash
 src/
 ├── components/
 │   ├── CartMenu.jsx
@@ -57,6 +57,8 @@ src/
 ├── App.jsx
 ├── index.jsx
 └── main.jsx
+```
+
 
 # Clone repository
 git clone https://github.com/Min0sss/PulsarGamingShop.git

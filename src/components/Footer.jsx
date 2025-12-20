@@ -27,7 +27,7 @@ export default function Footer() {
               "Processors",
               "RAM",
               "Storage",
-              "Computer Cases",
+              "Case",
               "Power Supplies",
               "Cooling",
               "Monitors",
